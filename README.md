@@ -1,5 +1,9 @@
 # Getting Started
 
+## Live View
+
+Check out the live view of the project [here](https://inspiration-six.vercel.app/).
+
 ## Color Combinations Section
 
 The `ColorCombinations` component is designed to showcase various color combinations for text and background used in the project. This component helps in visualizing how different color pairs look together, ensuring that the chosen colors provide good contrast and are visually appealing.
