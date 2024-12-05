@@ -1,3 +1,6 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import HomeIcon from '../UI/Home';
 import {
   Title,
   Card,
@@ -9,7 +12,9 @@ import {
   CardDescription,
 } from './Card';
 
-export default function ColorCombinations() {
+const ColorCombinations: React.FC = () => {
+  const navigate = useNavigate();
+
   const combinations = [
     {
       id: 1,
@@ -128,7 +133,9 @@ export default function ColorCombinations() {
   };
 
   return (
-    <>
+    <div>
+      <HomeIcon navigate={() => navigate('/')} />
+
       <Title>text & background combination</Title>
       <FlexContainer>
         {combinations.map((combo) => (
@@ -167,6 +174,7 @@ export default function ColorCombinations() {
           </Card>
         ))}
       </FlexContainer>
-    </>
+    </div>
   );
-}
+};
+export default ColorCombinations;
