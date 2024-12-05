@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
-const FlexContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 0 1rem; /* px-6 */
-  justify-content: center;
-  border: 1px solid none;
-  border-radius: 0.5rem; /* rounded-lg */
+const FlexContainer = styled.div.attrs({
+  className: `
+    flex 
+    flex-wrap 
+    gap-6 
+    justify-center 
+
+
+    px-8
+  `,
+})`
   & > * {
     flex: 1 1 calc(50% - 1.5rem); /* Two items per row with gap */
     max-width: calc(50% - 1.5rem);
@@ -21,74 +24,98 @@ const FlexContainer = styled.div`
   }
 `;
 
-const Title = styled.h2`
-  text-transform: capitalize; /* uppercase */
-  font-size: 3rem; /* text-2xl */
-  font-weight: 600; /* font-semibold */
-  letter-spacing: -0.015em; /* tracking-tight */
-  text-align: center;
-  margin-bottom: 1.5rem; /* mb-6 */
-  padding: 0;
-  margin: 2rem;
-`;
+const Title = styled.h2.attrs({
+  className: `
+    capitalize 
+    text-3xl 
+    font-semibold 
+    tracking-tight 
+    text-center 
+  my-8
+  `,
+})``;
 
-const Card = styled.div`
-  border-radius: 0.5rem; /* rounded-lg */
-  border: 1px solid none;
-  background-color: var(--bg-card); /* bg-card */
-  color: var(--text-card-foreground); /* text-card-foreground */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
-`;
+const Card = styled.div.attrs({
+  className: `
+    rounded-lg 
+    border 
+    bg-card 
+    text-card-foreground 
+    shadow-sm
+  `,
+})``;
 
-const CardHeader = styled.div`
+const CardHeader = styled.div.attrs({
+  className: `
+    overflow-hidden 
+    rounded-t-lg
+    text-center 
+    bg-card 
+    text-card-foreground
+    text-2xl
+    p-5
+  `,
+})`
   background-color: #334155;
   color: #e1e8f0;
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 600; /* font-semibold */
-  line-height: 1; /* leading-none */
-  letter-spacing: -0.015em; /* tracking-tight */
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: 0.5rem 0.5rem 0 0; /* rounded-lg */
-  border: 1px solid none;
 `;
 
-const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem; /* Add gap between items if needed */
-  border-radius: 0 0 0.5rem 0.5rem;
-  border: 1px solid none;
-`;
+const InfoContainer = styled.div.attrs({
+  className: `
+    flex 
+    flex-col 
+    items-center 
+    justify-center 
+    gap-2 
+    bg-card 
+    p-4 
+    rounded-b-lg
+  `,
+})``;
 
-const InfoBox = styled.div`
-  width: 50%;
-
+const InfoBox = styled.div.attrs({
+  className: `
+    w-1/2 
+    my-4
+  `,
+})`
   @media (max-width: 768px) {
     width: 80%;
   }
 `;
 
-const Info = styled.div`
-  background-color: rgba(15, 23, 42, 0.5); /* bg-slate-800 with opacity-50 */
-  color: #e2e8f0; /* text-slate-200 */
-  border: 1px solid;
-  border-radius: 0.5rem; /* rounded-lg */
-  padding: 0.5rem; /* Add padding if needed */
-  margin-bottom: 0.5rem; /* Add margin if needed */
+const Info = styled.div.attrs({
+  className: `
+    bg-slate-800 
+    bg-opacity-50 
+    text-slate-200 
+    border 
+    rounded-lg 
+    p-2 
+    mb-2 
+    flex 
+    justify-between 
+    items-center
+  `,
+})`
+  span:nth-child(3) {
+    cursor: pointer;
+  }
 `;
 
-const CardDescription = styled.div<{ color: string }>`
-  color: ${(props) => props.color};
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem; /* mb-6 */
-
+const CardDescription = styled.div.attrs<{ color: string }>((props) => ({
+  className: `
+    flex 
+    items-center 
+    mb-6
+  `,
+  style: {
+    color: props.color,
+  },
+}))`
   span {
-    color: #fbbf24; /* text-yellow-400 */
-    margin-right: 0.5rem; /* mr-2 */
+    color: #fbbf24;
+    margin-right: 0.5rem;
   }
 `;
 

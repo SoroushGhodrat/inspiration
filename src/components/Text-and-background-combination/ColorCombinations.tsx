@@ -97,9 +97,39 @@ export default function ColorCombinations() {
     },
   ];
 
+  const icon = (
+    <svg
+      className="w-6 h-6 text-gray-800 dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="white"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M9 8v3a1 1 0 0 1-1 1H5m11 4h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v1m4 3v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7.13a1 1 0 0 1 .24-.65L7.7 8.35A1 1 0 0 1 8.46 8H13a1 1 0 0 1 1 1Z"
+      />
+    </svg>
+  );
+
+  const handleCopy = (text: string) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        alert(`Color ${text} copied to clipboard!`);
+      })
+      .catch((err) => {
+        console.error('Failed to copy: ', err);
+      });
+  };
+
   return (
     <>
-      <Title>text & background combination </Title>
+      <Title>text & background combination</Title>
       <FlexContainer>
         {combinations.map((combo) => (
           <Card key={combo.id}>
@@ -108,9 +138,26 @@ export default function ColorCombinations() {
               <h2 style={{ color: combo.text }} className="text-3xl font-bold">
                 {combo.title}
               </h2>
+
+              <p style={{ color: combo.text }}>
+                The only way to do great work is to love what you do. <br />-
+                Steve Jobs
+              </p>
+
               <InfoBox>
-                <Info>Background: {combo.background}</Info>
-                <Info>Text: {combo.text}</Info>
+                <Info>
+                  <span>Background</span> |<span> {combo.background}</span> |
+                  <span
+                    title="Copy"
+                    onClick={() => handleCopy(combo.background)}
+                  >
+                    {icon}
+                  </span>
+                </Info>
+                <Info>
+                  <span>Text</span> |<span>{combo.text}</span> |
+                  <span onClick={() => handleCopy(combo.text)}>{icon}</span>
+                </Info>
               </InfoBox>
               <CardDescription color={combo.text}>
                 <span>★</span>
