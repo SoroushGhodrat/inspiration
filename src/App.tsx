@@ -1,9 +1,15 @@
 import React from 'react';
 import './App.css';
-import ColorCombinations from './components/Text-and-background-combination/ColorCombinations';
+import ColorCombinations from './components/TextAndBackgroundCombination/ColorCombinations';
+import MultiStepForm from './components/MultiStepsForm/MultiStepForm';
 
 const App: React.FC = () => {
-  return <ColorCombinations />;
+  return (
+    <>
+      <ColorCombinations />;
+      <MultiStepForm />;
+    </>
+  );
 };
 
 export default App;
