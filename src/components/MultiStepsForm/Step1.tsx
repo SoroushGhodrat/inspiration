@@ -12,7 +12,13 @@ const Step1: React.FC<Step1Props> = ({ formData, setFormData, nextStep }) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      personalInformation: {
+        ...formData.personalInformation,
+        [name]: value,
+      },
+    });
   };
 
   return (
@@ -32,7 +38,7 @@ const Step1: React.FC<Step1Props> = ({ formData, setFormData, nextStep }) => {
             id="firstName"
             name="firstName"
             placeholder=""
-            value={formData.firstName}
+            value={formData.personalInformation.firstName}
             onChange={handleInputChange}
             className="border border-gray-300 p-2 rounded-md w-full max-w-xs"
           />
@@ -46,7 +52,7 @@ const Step1: React.FC<Step1Props> = ({ formData, setFormData, nextStep }) => {
             id="lastName"
             name="lastName"
             placeholder=""
-            value={formData.lastName}
+            value={formData.personalInformation.lastName}
             onChange={handleInputChange}
             className="border border-gray-300 p-2 rounded-md w-full max-w-xs"
           />
@@ -63,7 +69,7 @@ const Step1: React.FC<Step1Props> = ({ formData, setFormData, nextStep }) => {
             id="dateOfBirth"
             name="dateOfBirth"
             placeholder=""
-            value={formData.dateOfBirth}
+            value={formData.personalInformation.dateOfBirth}
             onChange={handleInputChange}
             className="border border-gray-300 p-2 rounded-md w-full max-w-xs"
           />
@@ -76,7 +82,7 @@ const Step1: React.FC<Step1Props> = ({ formData, setFormData, nextStep }) => {
           <select
             id="gender"
             name="gender"
-            value={formData.gender}
+            value={formData.personalInformation.gender}
             onChange={handleInputChange}
             className="border border-gray-300 p-2 rounded-md w-full max-w-xs"
           >
