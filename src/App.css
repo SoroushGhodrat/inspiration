@@ -1,3 +1,5 @@
 .transition-bg {
-  transition: background-color 10s ease-in-out, background-image 10s ease-in-out;
+  transition:
+    background-color 10s ease-in-out,
+    background-image 10s ease-in-out;
 }

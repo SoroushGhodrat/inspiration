@@ -4,7 +4,6 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import { FormData } from '../../types/MultiStepForm';
 
-
 const MultiStepForm: React.FC = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
@@ -14,8 +13,6 @@ const MultiStepForm: React.FC = () => {
     dateOfBirth: '',
     email: '',
   });
-
-
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
