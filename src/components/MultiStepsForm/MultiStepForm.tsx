@@ -10,6 +10,8 @@ const MultiStepForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
+    gender: '',
+    dateOfBirth: '',
     email: '',
   });
 
@@ -24,7 +26,7 @@ const MultiStepForm: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="flex flex-col items-center gap-4 p-4 border border-gray-300 bg-gray-100 rounded-md max-w-md w-full">
+      <div className="flex flex-col items-center gap-4 p-8 border border-gray-300 bg-gray-100 rounded-lg max-w-lg w-full">
         {(() => {
           switch (step) {
             case 1:
