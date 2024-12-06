@@ -3,7 +3,7 @@ import { FormInput, Palette } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" sm:m-10 sm:ml-4 ">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-900 mb-12">
           Inspiration for your next project
@@ -34,7 +34,7 @@ interface ComponentTileProps {
 function ComponentTile({ title, icon, to }: ComponentTileProps) {
   return (
     <Link to={to} className="block">
-      <div className="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+      <div className="bg-background-light dark:bg-background-dark overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
         <div className="p-8">
           <div className="flex justify-center mb-4">{icon}</div>
           <h2 className="text-2xl font-semibold text-center text-gray-900">
