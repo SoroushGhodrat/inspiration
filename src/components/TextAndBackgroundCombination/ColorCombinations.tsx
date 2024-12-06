@@ -12,8 +12,6 @@ import {
 } from './Card';
 
 const ColorCombinations: React.FC = () => {
-
-
   const combinations = [
     {
       id: 1,

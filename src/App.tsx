@@ -24,7 +24,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div
-        className={`relative min-h-screen transition-bg ${darkMode ? 'bg-dark-gradient from-dark-gradient-start to-dark-gradient-end' : 'bg-light-gradient from-light-gradient-start to-light-gradient-end'}`}
+        className={`relative min-h-screen transition-bg  ${darkMode ? 'bg-dark-gradient from-dark-gradient-start to-dark-gradient-end' : 'bg-light-gradient from-light-gradient-start to-light-gradient-end'}`}
       >
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <main className="container mx-auto px-4 py-8">

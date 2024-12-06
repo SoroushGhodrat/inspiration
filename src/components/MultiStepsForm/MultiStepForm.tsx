@@ -2,18 +2,33 @@ import React, { useState } from 'react';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
+import Step4 from './Step4';
 import { FormData } from '../../types/MultiStepForm';
-
 
 const MultiStepForm: React.FC = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    email: '',
+    personalInformation: {
+      firstName: '',
+      lastName: '',
+      gender: '',
+      dateOfBirth: '',
+      email: '',
+    },
+    deliveryAddress: {
+      streetAddress: '',
+      city: '',
+      state: '',
+      postalCode: '',
+    },
+    paymentDetails: {
+      cardHolderName: '',
+      cardHolderFamilyName: '',
+      cardNumber: '',
+      expiryDate: '',
+      cvv: '',
+    },
   });
-
-
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
@@ -24,7 +39,7 @@ const MultiStepForm: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="flex flex-col items-center gap-4 p-4 border border-gray-300 bg-gray-100 rounded-md max-w-md w-full">
+      <div className="flex flex-col items-center gap-4 p-8 border border-gray-300 bg-gray-100 rounded-lg max-w-lg w-full">
         {(() => {
           switch (step) {
             case 1:
@@ -47,6 +62,15 @@ const MultiStepForm: React.FC = () => {
             case 3:
               return (
                 <Step3
+                  formData={formData}
+                  setFormData={setFormData}
+                  nextStep={nextStep}
+                  prevStep={prevStep}
+                />
+              );
+            case 4:
+              return (
+                <Step4
                   formData={formData}
                   setFormData={setFormData}
                   nextStep={nextStep}
