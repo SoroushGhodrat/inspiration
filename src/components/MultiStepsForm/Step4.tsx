@@ -31,93 +31,150 @@ const Step4: React.FC<Step3Props> = ({
   };
 
   return (
-    <div className="flex flex-col items-center gap-6 p-6 bg-white shadow-md rounded-lg">
-      <BookOpenCheck size={48} color="#1747d9" />
+    <div className="flex w-full max-w-3xl flex-col items-center gap-6 capitalize">
+      <BookOpenCheck size={48} color="#2563EB" />
       <h2 className="text-2xl font-bold text-gray-800">
         Step 4: Review and Submit
       </h2>
 
-      <div className="w-full max-w-md bg-gray-100 p-4 rounded-lg shadow-inner">
-        <h3 className="text-lg font-semibold text-gray-700 mb-2">
-          Personal Information
-        </h3>
-        <div className="space-y-1">
-          <p>
-            <strong>First Name:</strong>
-            {formData.personalInformation.firstName}
-          </p>
-          <p>
-            <strong>Last Name:</strong> {formData.personalInformation.lastName}
-          </p>
-          <p>
-            <strong>Gender:</strong> {formData.personalInformation.gender}
-          </p>
-          <p>
-            <strong>Date of Birth:</strong>
-            {formData.personalInformation.dateOfBirth}
-          </p>
-          <p>
-            <strong>Email:</strong> {formData.personalInformation.email}
-          </p>
-        </div>
-      </div>
+      <section className="w-full max-w-3xl rounded-lg bg-blue-100 p-4 shadow-inner">
+        <header className="mb-3">
+          <h3 className="text-lg font-semibold text-gray-700">
+            Personal Information
+          </h3>
+        </header>
+        <article className="space-y-1">
+          <div className="flex justify-between">
+            <span>
+              <strong>First Name:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.personalInformation.firstName}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Last Name:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.personalInformation.lastName}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Gender:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.personalInformation.gender}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Date of Birth:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.personalInformation.dateOfBirth}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Email:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.personalInformation.email}</span>
+          </div>
+        </article>
+      </section>
 
-      <div className="w-full max-w-md bg-gray-100 p-4 rounded-lg shadow-inner mt-4">
-        <h3 className="text-lg font-semibold text-gray-700 mb-2">
-          Delivery Address
-        </h3>
-        <div className="space-y-1">
-          <p>
-            <strong>Street Address:</strong>
-            {formData.deliveryAddress.streetAddress}
-          </p>
-          <p>
-            <strong>City:</strong> {formData.deliveryAddress.city}
-          </p>
-          <p>
-            <strong>State:</strong> {formData.deliveryAddress.state}
-          </p>
-          <p>
-            <strong>Postal Code:</strong> {formData.deliveryAddress.postalCode}
-          </p>
-        </div>
-      </div>
+      <section className="mt-4 w-full max-w-3xl rounded-lg bg-blue-100 p-4 shadow-inner">
+        <header className="mb-3">
+          <h3 className="text-lg font-semibold text-gray-700">
+            Delivery Address
+          </h3>
+        </header>
+        <article className="space-y-1">
+          <div className="flex justify-between">
+            <span>
+              <strong>Street Address:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.deliveryAddress.streetAddress}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>City:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.deliveryAddress.city}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>State:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.deliveryAddress.state}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Postal Code:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.deliveryAddress.postalCode}</span>
+          </div>
+        </article>
+      </section>
 
-      <div className="w-full max-w-md bg-gray-100 p-4 rounded-lg shadow-inner mt-4">
-        <h3 className="text-lg font-semibold text-gray-700 mb-2">
-          Payment Details
-        </h3>
-        <div className="space-y-1">
-          <p>
-            <strong>Card Holder Name:</strong>
-            {formData.paymentDetails.cardHolderName}
-          </p>
-          <p>
-            <strong>Card Holder Family Name:</strong>
-            {formData.paymentDetails.cardHolderFamilyName}
-          </p>
-          <p>
-            <strong>Card Number:</strong> {formData.paymentDetails.cardNumber}
-          </p>
-          <p>
-            <strong>Expiry Date:</strong> {formData.paymentDetails.expiryDate}
-          </p>
-          <p>
-            <strong>CVV:</strong> {formData.paymentDetails.cvv}
-          </p>
-        </div>
-      </div>
+      <section className="mt-4 w-full max-w-3xl rounded-lg bg-blue-100 p-4 shadow-inner">
+        <header className="mb-3">
+          <h3 className="text-lg font-semibold text-gray-700">
+            Payment Details
+          </h3>
+        </header>
+        <article className="space-y-1">
+          <div className="flex justify-between">
+            <span>
+              <strong>Card Holder Name:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.paymentDetails.cardHolderName}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Card Holder Family Name:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.paymentDetails.cardHolderFamilyName}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Card Number:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.paymentDetails.cardNumber}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>Expiry Date:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.paymentDetails.expiryDate}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>
+              <strong>CVV:</strong>
+            </span>
+            <span className="mx-2 flex-grow border-b border-dashed border-gray-400"></span>
+            <span>{formData.paymentDetails.cvv}</span>
+          </div>
+        </article>
+      </section>
 
-      <div className="flex gap-4 mt-6">
+      <div className="mt-6 flex gap-4">
         <button
           onClick={prevStep}
-          className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600"
+          className="rounded-md bg-gray-500 px-4 py-2 text-white hover:bg-gray-600"
         >
           Back
         </button>
         <button
           onClick={submitForm}
-          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+          className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
         >
           Submit
         </button>

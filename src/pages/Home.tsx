@@ -3,7 +3,7 @@ import { FormInput, Palette } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className=" sm:m-10 sm:ml-4 ">
+    <div className="sm:m-10 sm:ml-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-900 mb-12">
           Inspiration for your next project
