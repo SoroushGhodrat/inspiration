@@ -10,12 +10,12 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-white shadow dark:bg-gray-800">
+      <div className="container mx-auto flex items-center justify-between px-4 py-4">
         {/* Navbar left section */}
         <div className="flex items-center space-x-4">
           <img src={Logo} alt="Logo" className="h-8 rounded-full" />
-          <span className="text-gray-800 dark:text-white font-semibold text-lg">
+          <span className="text-lg font-semibold text-gray-800 dark:text-white">
             Inspiration
           </span>
         </div>
@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           <div>
             <button
               onClick={toggleDarkMode}
-              className="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none focus:ring-0"
+              className="p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-0 dark:text-gray-400 dark:hover:text-gray-200"
               title={
                 darkMode ? 'Switch to light theme' : 'Switch to dark theme'
               }
