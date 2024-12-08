@@ -9,8 +9,15 @@ interface Step2Props {
   prevStep: () => void;
 }
 
-const Step2: React.FC<Step2Props> = ({ formData, setFormData, nextStep, prevStep }) => {
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+const Step2: React.FC<Step2Props> = ({
+  formData,
+  setFormData,
+  nextStep,
+  prevStep,
+}) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -24,14 +31,23 @@ const Step2: React.FC<Step2Props> = ({ formData, setFormData, nextStep, prevStep
   return (
     <section className="flex flex-col items-center justify-center">
       <header className="mb-10 flex flex-col items-center justify-center text-2xl font-bold capitalize">
-        <MapPinHouse size={48} color="#2563EB" aria-label="Delivery Address Icon" />
+        <MapPinHouse
+          size={48}
+          color="#2563EB"
+          aria-label="Delivery Address Icon"
+        />
         <h1 className="mt-4">Step 2</h1>
         <h2 className="mt-4">Delivery Address</h2>
       </header>
 
-      <form className="w-full max-w-2xl space-y-4" aria-labelledby="delivery-address-form">
+      <form
+        className="w-full max-w-2xl space-y-4"
+        aria-labelledby="delivery-address-form"
+      >
         <fieldset>
-          <legend id="delivery-address-form" className="sr-only">Delivery Address Form</legend>
+          <legend id="delivery-address-form" className="sr-only">
+            Delivery Address Form
+          </legend>
           <div className="flex space-x-4">
             <div className="flex-1">
               <label htmlFor="streetAddress" className="text-lg">
@@ -49,7 +65,7 @@ const Step2: React.FC<Step2Props> = ({ formData, setFormData, nextStep, prevStep
             </div>
           </div>
 
-          <div className="flex space-x-4 mt-4">
+          <div className="mt-4 flex space-x-4">
             <div className="flex-1">
               <label htmlFor="city" className="text-lg">
                 City
@@ -80,7 +96,7 @@ const Step2: React.FC<Step2Props> = ({ formData, setFormData, nextStep, prevStep
             </div>
           </div>
 
-          <div className="flex space-x-4 mt-4">
+          <div className="mt-4 flex space-x-4">
             <div className="flex-1">
               <label htmlFor="postalCode" className="text-lg">
                 Postal Code

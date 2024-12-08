@@ -30,10 +30,15 @@ const Step1: React.FC<Step1Props> = ({ formData, setFormData, nextStep }) => {
         <h2 className="mt-4">Personal Information</h2>
       </header>
 
-      <form className="w-full max-w-2xl space-y-4" aria-labelledby="personal-information-form">
+      <form
+        className="w-full max-w-2xl space-y-4"
+        aria-labelledby="personal-information-form"
+      >
         <fieldset>
-          <legend id="personal-information-form" className="sr-only">Personal Information Form</legend>
-          <div className="flex space-x-4 mb-5">
+          <legend id="personal-information-form" className="sr-only">
+            Personal Information Form
+          </legend>
+          <div className="mb-5 flex space-x-4">
             <div className="flex-1">
               <label htmlFor="firstName" className="text-lg">
                 First Name

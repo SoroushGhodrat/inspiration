@@ -9,8 +9,15 @@ interface Step3Props {
   prevStep: () => void;
 }
 
-const Step3: React.FC<Step3Props> = ({ formData, setFormData, nextStep, prevStep }) => {
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+const Step3: React.FC<Step3Props> = ({
+  formData,
+  setFormData,
+  nextStep,
+  prevStep,
+}) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -29,9 +36,14 @@ const Step3: React.FC<Step3Props> = ({ formData, setFormData, nextStep, prevStep
         <h2 className="mt-4">Payment Details</h2>
       </header>
 
-      <form className="w-full max-w-2xl space-y-4" aria-labelledby="payment-details-form">
+      <form
+        className="w-full max-w-2xl space-y-4"
+        aria-labelledby="payment-details-form"
+      >
         <fieldset>
-          <legend id="payment-details-form" className="sr-only">Payment Details Form</legend>
+          <legend id="payment-details-form" className="sr-only">
+            Payment Details Form
+          </legend>
           <div className="flex space-x-4">
             <div className="flex-1">
               <label htmlFor="cardHolderName" className="text-lg">

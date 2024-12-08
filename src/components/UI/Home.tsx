@@ -8,7 +8,7 @@ const HomeIcon: React.FC = () => {
     <div
       title="Home"
       onClick={() => navigate('/')}
-      className="right-4 cursor-pointer text-gray-800 dark:text-white hover:text-blue-500 transition-colors duration-200"
+      className="right-4 cursor-pointer text-gray-800 transition-colors duration-200 hover:text-blue-500 dark:text-white"
       aria-label="Go to Home"
     >
       <Home size={24} color="currentColor" />
