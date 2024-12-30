@@ -97,6 +97,20 @@ const ColorCombinations: React.FC = () => {
       text: '#7FDBDA',
       description: 'High Contrast - Ideal for footers',
     },
+    {
+      id: 13,
+      title: 'Soft Touch',
+      background: '#2B2D42',
+      text: '#F0A202',
+      description: 'High Contrast - Great for hero sections',
+    },
+      {
+      id: 14,
+      title: 'Urban Night',
+      background: '#080508',
+      text: '#F0CD26',
+      description: 'Ideal for high contrast sections.',
+    },
   ];
 
   const icon = (
