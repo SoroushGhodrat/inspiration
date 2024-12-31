@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FormInput, Palette } from 'lucide-react';
+import { FormInput, Palette, Cog, ExternalLink } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         </h1>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <ComponentTile
-            title="Form"
+            title="Multi Step Form"
             icon={<FormInput className="h-24 w-24 text-blue-500" />}
             to="/form"
           />
@@ -18,6 +18,13 @@ export default function Home() {
             title="Text & Background Combination"
             icon={<Palette className="h-24 w-24 text-green-500" />}
             to="/color"
+          />
+          <ComponentTile
+            title="JSON Fake Data Generator"
+            icon={<Cog className="h-24 w-24 text-yellow-500" />}
+            to="https://data-generator-rose.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
           />
         </div>
       </div>
@@ -29,11 +36,13 @@ interface ComponentTileProps {
   title: string;
   icon: React.ReactNode;
   to: string;
+  target?: string;
+  rel?: string;
 }
 
-function ComponentTile({ title, icon, to }: ComponentTileProps) {
+function ComponentTile({ title, icon, to, target, rel }: ComponentTileProps) {
   return (
-    <Link to={to} className="block">
+    <Link to={to} target={target} rel={rel} className="block">
       <div className="overflow-hidden rounded-lg bg-background-light shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl dark:bg-background-dark">
         <div className="p-8">
           <div className="mb-4 flex justify-center">{icon}</div>

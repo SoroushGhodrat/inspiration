@@ -104,7 +104,7 @@ const ColorCombinations: React.FC = () => {
       text: '#F0A202',
       description: 'High Contrast - Great for hero sections',
     },
-      {
+    {
       id: 14,
       title: 'Urban Night',
       background: '#080508',
