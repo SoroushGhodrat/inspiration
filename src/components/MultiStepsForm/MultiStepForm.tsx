@@ -38,7 +38,7 @@ const MultiStepForm: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="mt-5 flex items-center justify-center">
       <div className="flex w-full max-w-lg flex-col items-center gap-4 rounded-lg border border-gray-300 bg-gray-100 p-8 md:min-w-[700px]">
         {(() => {
           switch (step) {
