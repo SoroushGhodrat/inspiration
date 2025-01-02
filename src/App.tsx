@@ -5,6 +5,7 @@ import MultiStepForm from './components/MultiStepsForm/MultiStepForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/UI/Navbar';
+import NotFound from './components/NotFound/NotFound';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -24,14 +25,20 @@ const App: React.FC = () => {
   return (
     <Router>
       <div
-        className={`transition-bg relative min-h-screen ${darkMode ? 'bg-dark-gradient from-dark-gradient-start to-dark-gradient-end' : 'bg-light-gradient from-light-gradient-start to-light-gradient-end'}`}
+        className={`transition-bg relative min-h-screen ${
+          darkMode
+            ? 'bg-dark-gradient from-dark-gradient-start to-dark-gradient-end'
+            : 'bg-light-gradient from-light-gradient-start to-light-gradient-end'
+        } `}
       >
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/form" element={<MultiStepForm />} />
             <Route path="/color" element={<ColorCombinations />} />
+            <Route path="not-found" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </div>

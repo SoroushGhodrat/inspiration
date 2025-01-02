@@ -1,0 +1,200 @@
+/* Define the keyframe animation for expanding */
+@keyframes expandColor {
+  0% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.1) 0%
+    );
+  }
+
+  10% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 10%,
+      rgba(30, 58, 138, 0.5) 10%
+    );
+  }
+
+  20% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(30, 58, 138, 0.5) 20%
+    );
+  }
+
+  30% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 30%,
+      rgba(30, 58, 138, 0.5) 30%
+    );
+  }
+
+  40% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 40%,
+      rgba(30, 58, 138, 0.5) 40%
+    );
+  }
+
+  50% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(30, 58, 138, 0.5) 50%
+    );
+  }
+
+  60% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 60%,
+      rgba(30, 58, 138, 0.5) 60%
+    );
+  }
+
+  70% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(30, 58, 138, 0.5) 70%
+    );
+  }
+
+  80% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 80%,
+      rgba(30, 58, 138, 0.5) 80%
+    );
+  }
+
+  90% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 90%,
+      rgba(30, 58, 138, 0.5) 90%
+    );
+  }
+
+  100% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 100%,
+      rgba(30, 58, 138, 0.5) 100%
+    );
+  }
+}
+
+/* Define the keyframe animation for contracting */
+@keyframes contractColor {
+  0% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 100%,
+      rgba(30, 58, 138, 0.5) 100%
+    );
+  }
+
+  10% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 90%,
+      rgba(30, 58, 138, 0.5) 90%
+    );
+  }
+
+  20% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 80%,
+      rgba(30, 58, 138, 0.5) 80%
+    );
+  }
+
+  30% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(30, 58, 138, 0.5) 70%
+    );
+  }
+
+  40% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 60%,
+      rgba(30, 58, 138, 0.5) 60%
+    );
+  }
+
+  50% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(30, 58, 138, 0.5) 50%
+    );
+  }
+
+  60% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 40%,
+      rgba(30, 58, 138, 0.5) 40%
+    );
+  }
+
+  70% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 30%,
+      rgba(30, 58, 138, 0.5) 30%
+    );
+  }
+
+  80% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(30, 58, 138, 0.5) 20%
+    );
+  }
+
+  90% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 10%,
+      rgba(30, 58, 138, 0.5) 10%
+    );
+  }
+
+  100% {
+    background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.1) 0%
+    );
+  }
+}
+
+/* Apply the animation to the .education class */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  /* Default background color */
+  backdrop-filter: blur(10px);
+  /* Glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* Subtle border */
+  transition: background 0.2s ease-in-out;
+}
+
+.card:hover {
+  animation: expandColor 0.2s forwards;
+}
+
+.card:not(:hover) {
+  animation: contractColor 0.2s forwards;
+}
