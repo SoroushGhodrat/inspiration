@@ -5,6 +5,7 @@ import {
   Cog,
   ExternalLink,
   CloudAlert,
+  ScissorsLineDashed,
 } from 'lucide-react';
 
 import styles from './home.module.css';
@@ -29,7 +30,12 @@ export default function Home() {
             to="/color"
           />
           <ComponentTile
-            title="JSON Fake Data Generator"
+            title={
+              <>
+                JSON Fake Data Generator
+                <ExternalLink className="ml-2 inline-block text-blue-500" />
+              </>
+            }
             icon={<Cog className="h-24 w-24 text-yellow-500" />}
             to="https://data-generator-rose.vercel.app/"
             target="_blank"
@@ -40,6 +46,11 @@ export default function Home() {
             icon={<CloudAlert className="h-24 w-24" color="#DD4124" />}
             to="/not-found"
           />
+          <ComponentTile
+            title="text trim"
+            icon={<ScissorsLineDashed className="h-24 w-24 text-lime-700" />}
+            to="/text-trim"
+          />
         </div>
       </div>
     </div>
@@ -47,7 +58,7 @@ export default function Home() {
 }
 
 interface ComponentTileProps {
-  title: string;
+  title: string | React.ReactNode;
   icon: React.ReactNode;
   to: string;
   target?: string;
@@ -57,18 +68,18 @@ interface ComponentTileProps {
 
 function ComponentTile({ title, icon, to, target, rel }: ComponentTileProps) {
   return (
-    <Link to={to} target={target} rel={rel} className="block">
-      <div
-        className={`overflow-hidden rounded-lg bg-background-light shadow-lg transition-shadow duration-300 ease-in-out hover:bg-indigo-50 hover:shadow-xl dark:bg-background-dark ${styles.education}`}
-        // className={`overflow-hidden rounded-lg  dark:bg-background-dark ${styles.card}`}
-      >
+    <div
+      className={`rounded-lg bg-background-light shadow-lg transition-shadow duration-300 ease-in-out hover:bg-indigo-50 hover:shadow-xl dark:bg-background-dark ${styles.education}`}
+      // className={`overflow-hidden rounded-lg  dark:bg-background-dark ${styles.card}`}
+    >
+      <Link to={to} target={target} rel={rel} className="block">
         <div className="p-8">
           <div className="mb-4 flex justify-center">{icon}</div>
-          <h2 className="text-center text-2xl font-semibold text-gray-900">
+          <h2 className="text-center text-2xl font-semibold capitalize text-gray-900">
             {title}
           </h2>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
