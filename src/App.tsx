@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/UI/Navbar';
 import NotFound from './components/NotFound/NotFound';
+import TrimText from './components/TrimText/TrimText';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -32,12 +33,13 @@ const App: React.FC = () => {
         } `}
       >
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <main className="container mx-auto">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/form" element={<MultiStepForm />} />
             <Route path="/color" element={<ColorCombinations />} />
             <Route path="not-found" element={<NotFound />} />
+            <Route path="/text-trim" element={<TrimText />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
